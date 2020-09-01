@@ -1,4 +1,4 @@
-# authenticatio_instock
+# Authentication_instock
 
 A new Flutter application.
 
