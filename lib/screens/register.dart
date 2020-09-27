@@ -171,8 +171,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (input.isEmpty) {
       return 'Enter a password';
     } else {
-      //Checks for 8 characters
-      //Checks for at least one number / alphabet
       RegExp regex = RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
       if (!regex.hasMatch(input)) {
         if (input.length < 8) {
@@ -189,8 +187,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (input.isEmpty) {
       return 'Repeat password';
     } else {
-      //Checks for 8 characters
-      //Checks for at least one number / alphabet
       RegExp regex = RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
       if (!regex.hasMatch(input)) {
         if (input.length < 8) {

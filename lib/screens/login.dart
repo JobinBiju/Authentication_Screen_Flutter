@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:authenticatio_instock/screens/register.dart';
 import 'package:authenticatio_instock/utilities/global.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +46,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.grey,
                         ),
                       ),
+                      onChanged: (value) {
+                        email = value;
+                      },
                       validator: (value) {
                         if (value.isEmpty) {
                           return 'Enter the email';
@@ -73,6 +78,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 : FontAwesomeIcons.eyeSlash),
                           ),
                       ),
+                      onChanged: (value) {
+                        password = value;
+                      },
                       obscureText: !showPassword,
                       validator: (input) {
                         passwordValidator(input);
