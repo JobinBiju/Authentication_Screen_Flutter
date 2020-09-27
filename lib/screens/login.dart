@@ -2,7 +2,6 @@ import 'package:authenticatio_instock/screens/register.dart';
 import 'package:authenticatio_instock/utilities/global.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -12,7 +11,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   bool showPassword = false;
   final _formKey = GlobalKey<FormState>();
-  double phone; String password = '';
+  double phone; String password; String email;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
-                        labelText: 'Phone No.',
+                        labelText: 'Email ID',
                         labelStyle: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: Colors.grey,
@@ -47,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       validator: (value) {
                         if (value.isEmpty) {
-                          return 'Enter the number';
+                          return 'Enter the email';
                         }
                         return null;
                       },
@@ -76,9 +75,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       obscureText: !showPassword,
                       validator: (input) {
-                        if (input.isEmpty) {
-                          return 'Enter the password';
-                        }
                         passwordValidator(input);
                         return null;
                       },
