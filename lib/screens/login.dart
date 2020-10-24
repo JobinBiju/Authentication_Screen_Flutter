@@ -120,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             if (_formKey.currentState.validate()) {
                               if (await checkConnection()) {
                                 Scaffold.of(context).showSnackBar(SnackBar(
-                                  content: Text('Logging In! Just a moment'),
+                                  content: Text('Logging In! taking a while'),
                                 ));
                               }
                            }
@@ -188,9 +188,9 @@ class _LoginScreenState extends State<LoginScreen> {
       RegExp regex = RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
       if (!regex.hasMatch(input)) {
         if (input.length < 8) {
-          return 'The password should be at least 8 characters';
+          return 'Password should be at least 8 characters';
         } else {
-          return 'The password should have at least one number or alphabet';
+          return 'Password should have at least one number or alphabet';
         }
       }
     }
